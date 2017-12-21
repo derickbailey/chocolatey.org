@@ -34,13 +34,20 @@
                 </form>
             </div>
         </div>*@
-          <div class="flex">
-            <span class="p-r text-orange"><span class="icon-warning huge"></span></span>
-            <p class="no-margin">Your use of the packages on this site means you understand they are not to be used for organizational or production purposes and they are not supported or guaranteed in any way. For more details why, <a href="@Url.RouteUrl(RouteName.Docs, new
-                                                                                                                                                                                                                                                  {
-                                                                                                                                                                                                                                                      docName = "community-packages-disclaimer"
-                                                                                                                                                                                                                                                  })">please read the disclaimer.</a></p>
-          </div>
+          
+        @if (@HttpContext.Current.Request.Cookies["chocolatey_hide_packages_disclaimer"] == null)
+        {
+            <div class="flex modal-closeable" id="package-disclaimer">
+                <div class="message-content">
+                    <p class="no-margin">
+                        Your use of the packages on this site means you understand they are not to be used for 
+                        organizational or production purposes and they are not supported or guaranteed in any 
+                        way. For more details why, <a href="@Url.RouteUrl(RouteName.Docs, new { docName = "community-packages-disclaimer" })">please read the disclaimer.</a>
+                    </p>
+                    <div class="close button"><i class="fa fa-fw fa-check-circle-o"></i>I Understand.</div>
+                </div>
+            </div>
+        }
         </div>
       </div>
   }
@@ -130,6 +137,15 @@
         $(function () {
             $("#sortOrder,#prerelease,#moderatorQueue").change(function () {
                 $(this).closest("form").submit();
+            });
+
+            $(".modal-closeable .close").click(function (e) {
+                $(e.target).closest(".modal-closeable").hide();
+                var d = new Date();
+                // 100 years in milliseconds: 100 years * 365 days * 24 hours * 60 minutes * 60 seconds * 1000ms
+                d.setTime(d.getTime() + (100 * 365 * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = "chocolatey_hide_packages_disclaimer=true;" + expires + ";path=/";
             });
         });
     </script>
