@@ -218,7 +218,7 @@ section.package .profile {
     font-weight: 400;
 }
 
-.closeable {
+.modal-closeable {
     position: fixed;
     display: block;
     z-index: 9999999;
@@ -231,7 +231,7 @@ section.package .profile {
     background-color: rgba(0,0,0,0.5);
 }
 
-.closeable .message-content {
+.modal-closeable .message-content {
     display: block;
     position: relative;
     width: 960px;
@@ -243,7 +243,7 @@ section.package .profile {
     background-color: #fff;
 }
 
-.closeable .close {
+.modal-closeable .close {
     position: relative;
     display: inline-block;
     float: right;
