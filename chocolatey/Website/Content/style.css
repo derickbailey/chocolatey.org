@@ -3690,7 +3690,7 @@ fieldset.form  {
     position: relative;
     float: right;
     font-size: 0.8em;
-    margin: -0.25em 0.5em 0em 0.5em;
+    margin: -0.25em 0 0 0;
     padding: 0.25em 1em;
     background-color: #0a0;
     text-decoration: underline;
