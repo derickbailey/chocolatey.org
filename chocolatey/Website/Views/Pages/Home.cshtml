@@ -3,7 +3,6 @@
     ViewBag.Tab = "Home";
     //js
     Bundles.Reference("Scripts/home");
-    Bundles.Reference("Scripts/CookiesNotice");
     //Bundles.Reference("Scripts/ZeroClipboard");
 }
 
@@ -141,15 +140,7 @@
         </section>
     </div>
 </div>
-@if (@HttpContext.Current.Request.Cookies["chocolatey_hide_cookies_notice"] == null)
-{
-    <div class="cookies-popup">
-        <div class="cookies-message">
-            Chocolatey.org uses cookies to enhance the user experience of the site, but never to track your activity.
-        </div>
-        <div class="cookies-close">Ok</div>
-    </div>
-}
+
 @*
     <section class="featured">
         <img src="@Url.Content("~/content/images/hero.png")" alt="Chocolatey install of Git (cinst git). Chocolatey benefits: 1. Sort of like yum or apt-get but for Windows; 2. Global silent installer; 3. Supports multiple package feeds, including private!; 4. Feeds can be local file/folder shares!; 5. NuGet Infrastructure + PowerShell Delivery" />
@@ -204,7 +195,6 @@
 @section BottomScripts
 {
     <script type="text/javascript" language="javascript">
-        CookiesNotice.modal("chocolatey_hide_cookies_notice");
         $(getStats);
     </script>
 }

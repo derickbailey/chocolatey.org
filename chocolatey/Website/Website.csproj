@@ -1507,6 +1507,7 @@
     <Content Include="Views\Documentation\HelpersGetPackageParameters.cshtml" />
     <Content Include="Views\Blog\ChocolateyGUI0.15.0.md" />
     <Content Include="Views\Pages\Evaluation.cshtml" />
+    <Content Include="Views\Shared\_CookiePolicy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -2,28 +2,28 @@
 @using NuGetGallery;
 @using StackExchange.Profiling
 @{
+    var noticeText = @"Notices: This section not yet converted to new layout. Download stats are rolling back out.";
 
-  var noticeText = @"Notices: This section not yet converted to new layout. Download stats are rolling back out.";
-
-  if (!ViewData.ContainsKey(Constants.ReturnUrlViewDataKey) || string.IsNullOrWhiteSpace((string)ViewData[Constants.ReturnUrlViewDataKey]))
-  {
-    if (TempData.ContainsKey(Constants.ReturnUrlViewDataKey))
+    if (!ViewData.ContainsKey(Constants.ReturnUrlViewDataKey) || string.IsNullOrWhiteSpace((string)ViewData[Constants.ReturnUrlViewDataKey]))
     {
-      TempData[Constants.ReturnUrlViewDataKey] = Request.RawUrl;
+        if (TempData.ContainsKey(Constants.ReturnUrlViewDataKey))
+        {
+            TempData[Constants.ReturnUrlViewDataKey] = Request.RawUrl;
+        }
+        else
+        {
+            TempData.Add(Constants.ReturnUrlViewDataKey, Request.RawUrl);
+        }
     }
-    else
-    {
-      TempData.Add(Constants.ReturnUrlViewDataKey, Request.RawUrl);
-    }
-  }
 
 
-  //css
-  Bundles.Reference("Content/site.css");
-  Bundles.Reference("Content/chocolatey.css");
-  //js
-  Bundles.Reference("Scripts");
-  Bundles.Reference("Scripts/header", "header");
+    //css
+    Bundles.Reference("Content/site.css");
+    Bundles.Reference("Content/chocolatey.css");
+    //js
+    Bundles.Reference("Scripts");
+    Bundles.Reference("Scripts/header", "header");
+    Bundles.Reference("Scripts/CookiesNotice");
 }
 <!DOCTYPE html>
 <html lang="en" class="static ">
@@ -194,6 +194,7 @@
             </div>
         </footer>
     </div>
+  @RenderPage("_CookiePolicy.cshtml")
   @Bundles.RenderScripts()
   @RenderSection("BottomScripts", required: false) 
 
@@ -220,5 +221,8 @@
         };
     </script>
     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    <script language="javascript">
+      CookiesNotice.modal("chocolatey_hide_cookies_notice");
+    </script>
 </body>
 </html>

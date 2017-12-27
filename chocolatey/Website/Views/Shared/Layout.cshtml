@@ -1,6 +1,7 @@
 ﻿@using System.Configuration
 @{
     Layout = "_BaseLayout.cshtml";
+    Bundles.Reference("Scripts/CookiesNotice");
 }
 @{
     var noticeText = @"";
@@ -148,6 +149,10 @@
   </script>
 
   <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  @RenderPage("_CookiePolicy.cshtml")
+  <script language="javascript">
+      CookiesNotice.modal("chocolatey_hide_cookies_notice");
+  </script>
 </body>
 @*
     <div id="layout-footer" class="group">
