@@ -96,12 +96,10 @@
                 <li><a href="https://groups.google.com/group/chocolatey">Forum*</a></li>
                 <li><a href="http://cafepress.com/chocolatey">Shop*</a></li>
             </ul>
-            <div id="searchBox" role="search">
-                <form action="@Url.PackageList()" method="get">
-                <input name="q" id="searchBoxInput" title="Search by id only with 'id:searchValue'. Search by tags with 'tag:searchValue'." placeholder="Search Packages" value="@(String.IsNullOrEmpty(ViewBag.SearchTerm) ? "" : ViewBag.SearchTerm)" autofocus />
+            <form id="searchBox" role="search" action="@Url.PackageList()" method="get">
                 <input id="searchBoxSubmit" title="Search by id only with 'id:searchValue'. Search by tags with 'tag:searchValue'." type="submit" value=" " />
-                </form>
-            </div>
+                <input name="q" id="searchBoxInput" title="Search by id only with 'id:searchValue'. Search by tags with 'tag:searchValue'." placeholder="Search Packages" value="@(String.IsNullOrEmpty(ViewBag.SearchTerm) ? "" : ViewBag.SearchTerm)" />
+            </form>
         </nav>
         <div id="body" role="main">
             @if (TempData.ContainsKey("Message"))
