@@ -3699,3 +3699,77 @@ fieldset.form  {
     border: 2px solid #fff;
     cursor: pointer;
 }
+
+/* Search */
+
+#searchBox {
+    position: absolute;
+    right: 1em;
+    border: 0px;
+    margin: 0;
+    height: 32px;
+    padding: 0 1em 0 0;
+    vertical-align: top;
+    width: 100%;
+}
+
+#searchBoxInput {
+    position: absolute;
+    right: 0;
+    color: #333;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    padding: 0 0.5em;
+    margin-right: 2.4em;
+    width: 9em;
+    float: right;
+    transition-property: width;
+    transition-duration: 1s;
+
+    border: 1px solid #2f6492;
+    border-right: 0;
+    border-radius: 0.25em 0 0 0.25em;
+    -moz-border-radius: 0.25em 0 0 0.25em;
+    -webkit-border-radius: 0.25em 0 0 0.25em;
+    border-collapse: collapse;
+    z-index: 99999;
+}
+
+#searchBoxInput:focus {
+    width: -webkit-calc(100% - 18em);
+    width:    -moz-calc(100% - 18em);
+    width:         calc(100% - 18em);    
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+
+@media(max-width: 800px) {
+    #searchBoxInput:focus {
+        width: -webkit-calc(100% - 5em);
+        width:    -moz-calc(100% - 5em);
+        width:         calc(100% - 5em);
+        transition-duration: 0.25s;
+    }
+}
+
+#searchBoxSubmit {
+    background-color: #fff;
+    background-image: url("../Content/Images/searchbutton.png");
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin-left: 0;
+    float: right;
+    border-collapse: collapse;
+    text-indent: -9999px;
+    vertical-align:top;
+
+    border: 1px solid #2f6492;
+    border-left: 0;
+    
+    border-radius: 0 0.25em 0.25em 0;
+    -moz-border-radius: 0 0.25em 0.25em 0;
+    -webkit-border-radius: 0 0.25em 0.25em 0;
+}

@@ -54,6 +54,11 @@
                                          })">Docs</a></li>
         <li>@Html.Partial(MVC.Shared.Views.UserDisplay)</li>
       </ul>
+      <form id="searchBox" role="search" action="@Url.PackageList()" method="get">
+          <input id="searchBoxSubmit" title="Search by id only with 'id:searchValue'. Search by tags with 'tag:searchValue'." type="submit" value=" " />
+          <input name="q" id="searchBoxInput" title="Search by id only with 'id:searchValue'. Search by tags with 'tag:searchValue'." placeholder="Search Packages" value="@(String.IsNullOrEmpty(ViewBag.SearchTerm) ? "" : ViewBag.SearchTerm)" />
+      </form>
+
     </nav>
   </header>
   <main>
