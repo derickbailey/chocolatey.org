@@ -125,6 +125,11 @@
 </ol>
 
 @ViewHelpers.PreviousNextPager(Model.Pager)
+
+<hr />
+<h1>Documentation Search Results:</h1>
+<gcse:searchresults-only></gcse:searchresults-only>
+
 @section BottomScripts {
     <script>
         $(function () {
@@ -137,5 +142,15 @@
               $(".modal-closeable").css('display', 'block');
             }
         });
+  (function() {
+    var cx = '004982007648532481278:lkpvc6pmuje';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
     </script>
 }
