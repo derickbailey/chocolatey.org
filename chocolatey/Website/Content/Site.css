@@ -1326,13 +1326,14 @@ header.main {
 }
 
 .search-results ul.results-tab-list li:first-child {
-    margin-left: 1em;
     background-color: #fff;
     border: 0;
     font-weight: bold;
+    cursor: default;
+    text-decoration: none;
 }
 
-.search-results ul.results-tab-list li:hover {
+.search-results ul.results-tab-list li.tab:hover {
     text-decoration: underline;
 }
 
