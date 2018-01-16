@@ -1282,6 +1282,8 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\manageowners\bundle.txt" />
+    <Content Include="Scripts\SearchResultsTabs\bundle.txt" />
+    <Content Include="Scripts\SearchResultsTabs\SearchResultsTabs.js" />
     <Content Include="Scripts\SyntaxHighlighter\bundle.txt" />
     <Content Include="Scripts\validation\bundle.txt" />
     <Content Include="Scripts\validation\jquery.validate.js" />
