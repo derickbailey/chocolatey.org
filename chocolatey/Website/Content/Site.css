@@ -1331,6 +1331,8 @@ header.main {
     font-weight: bold;
     cursor: default;
     text-decoration: none;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: -2px;
 }
 
 .search-results ul.results-tab-list li.tab:hover {
