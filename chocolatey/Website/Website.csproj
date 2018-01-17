@@ -673,6 +673,7 @@
     </Compile>
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DocumentationController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Infrastructure\CassetteConfiguration.cs" />
     <Compile Include="Infrastructure\CSharpRazorViewEngine.cs" />
@@ -1327,6 +1328,7 @@
     <Content Include="Views\Pages\Home.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <None Include="Views\Search\SearchResults.cshtml" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Packages\DisplayPackage.cshtml" />
     <Content Include="Web.config">

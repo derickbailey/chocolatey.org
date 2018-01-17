@@ -383,6 +383,13 @@ namespace NuGetGallery
                  defaults: null
             );
 
+            routes.MapRouteSeo(
+                "Search", "search", new
+                {
+                    controller = "Search",
+                    Action = "DoSearch"
+                });
+
             routes.MapRoute("v2PackageIds", "api/v2/package-ids", MVC.Api.GetPackageIds());
 
             routes.MapRoute("v2PackageVersions", "api/v2/package-versions/{id}", MVC.Api.GetPackageVersions());
