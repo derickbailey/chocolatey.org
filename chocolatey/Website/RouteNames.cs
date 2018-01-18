@@ -84,5 +84,6 @@ namespace NuGetGallery
         public const string CreateCuratedPackageForm = "CreateCuratedPackageForm";
         public const string CuratedPackages = "CuratedPackages";
         public const string CuratedPackage = "CuratedPackage";
+        public const string SearchResults = "search";
     }
 }

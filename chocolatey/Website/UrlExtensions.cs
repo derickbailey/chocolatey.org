@@ -36,6 +36,11 @@ namespace NuGetGallery
             return url.RouteUrl(RouteName.Home);
         }
 
+        public static string SearchResults(this UrlHelper url)
+        {
+            return url.RouteUrl(RouteName.SearchResults);
+        }
+
         public static string PackageList(
             this UrlHelper url, int page, string sortOrder, string searchTerm, bool prerelease, bool moderatorQueue)
         {
