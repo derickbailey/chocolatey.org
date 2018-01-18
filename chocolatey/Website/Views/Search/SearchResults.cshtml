@@ -35,10 +35,10 @@
     <div class="packages-results">
 
         <div class="hgroup search">
-            <div style="float:right">
+            <div class="rss-subscribe">
                 <a href="https://feeds.feedburner.com/chocolatey" title="Subscribe to package updates" rel="alternate" type="application/rss+xml"><img src="https://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="RSS" style="border:0" />&nbsp;<span>Subscribe to updates</span></a>
                 <br />
-                <form style="border:0px solid #ccc;padding:1px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=chocolatey', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><input type="hidden" value="chocolatey" name="uri" /><input type="hidden" name="loc" value="en_US" />Or subcribe by <input type="submit" value="email" /></form>
+                <form style="border:0px solid #ccc;padding:1px" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=chocolatey', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><input type="hidden" value="chocolatey" name="uri" /><input type="hidden" name="loc" value="en_US" />Or subcribe by <input type="submit" value="email" /></form>
             </div>
             @if (!String.IsNullOrEmpty(Model.SearchTerm))
             {
@@ -86,17 +86,20 @@
                         @ViewHelpers.Option("", "Normal View", Model.ModeratorQueue)
                         @ViewHelpers.Option("true", "Moderator Queue", Model.ModeratorQueue)
                     </select>
+                </div>
+                <div class="form-field">
 
                     <select name="prerelease" id="prerelease">
                         @ViewHelpers.Option("false", "Stable Only", Model.IncludePrerelease)
                         @ViewHelpers.Option("true", "Include Prerelease", Model.IncludePrerelease)
                     </select>
-
+                </div>
+                <div class="form-field">
                     <label for="sortOrder">Sort By</label>
                     <select name="sortOrder" id="sortOrder">
                         @if (!Model.SearchTerm.IsEmpty())
                         {
-                        @ViewHelpers.Option(Constants.RelevanceSortOrder, "Relevance", Model.SortOrder)
+                            @ViewHelpers.Option(Constants.RelevanceSortOrder, "Relevance", Model.SortOrder)
                         }
                         @ViewHelpers.Option(Constants.PopularitySortOrder, "Popularity", Model.SortOrder)
                         @ViewHelpers.Option(Constants.AlphabeticSortOrder, "A-Z", Model.SortOrder)
