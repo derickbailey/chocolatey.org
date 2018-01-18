@@ -3861,6 +3861,10 @@ fieldset.form  {
     .search-results {
         margin: 0;
     }
+
+    .search-results .docs-results h1 {
+        text-align: center;
+    }
 }
 
 .search-results .packages-results {
