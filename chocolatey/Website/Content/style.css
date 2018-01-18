@@ -3835,9 +3835,8 @@ fieldset.form  {
     display: none;
 }
 
-/* google search results formatting */
-
-.cse .gsc-control-cse, .gsc-control-cse {
-    background-color: transparent !important;
-    border: 0 !important;
+@media(min-width: 801px) {
+    .search-results {
+        margin: 0;
+    }
 }
