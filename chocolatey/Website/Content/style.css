@@ -3835,8 +3835,125 @@ fieldset.form  {
     display: none;
 }
 
-@media(min-width: 801px) {
+@media(max-width: 800px) {
     .search-results {
         margin: 0;
     }
 }
+
+  /* List Package */
+    section.package {
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+    }
+    
+        section.package.my-package {
+            background: url("Images/yourpackage.png") no-repeat 100% 0; 
+        }
+        
+        section.package.unknown-status {
+            background-color: #fff0f0;
+        }       
+        
+        section.package.ready {
+            background-color: #ddfcdd;
+        }
+        
+        section.package.updated {
+            background-color: #a2c1a2;
+        }      
+        
+        section.package.responded {
+            background-color: #a2c1a2;
+        }
+        
+        section.package.waiting {
+            background-color: #ffead2;  
+        }
+    
+    section.package .main {
+        margin-left: 70px;
+    }
+        
+        section.package header {
+            margin-bottom: 5px;
+        }
+
+        section.package h1 {
+            font-size: 1.75em;
+            margin: 0;
+        }
+        
+        section.package h2 {
+            display: inline;
+            font-size: 1.25em;
+        }
+        
+        section.package ul,
+        section.package li {
+            display: inline;
+        }
+        section.package ol li {
+            display: list-item;
+        }
+        
+         section.package p {
+            line-height: 1.25em;
+            margin-bottom: 5px;
+         }
+        
+        section.package .downloads {
+            display: inline;
+            font-size: 1.25em;
+            font-weight: 600;
+        }
+        
+        section.package div.tags {
+            border-left: 1px solid #ccc;
+            display: inline;
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+        
+            section.package div.tags h2 {
+                margin-right: 5px;
+            }
+    
+    section.package .side {
+        float: left;
+        width: 70px;
+    }
+    
+         section.package .side img {
+            display: block;
+            margin:0 auto;
+            max-width: 48px;
+            max-height:48px;
+        }
+            
+    section.package .moderator-side {
+        position: relative;
+        float: right;
+        left: -1050px;
+        text-align: right;
+        font-weight: bold;
+        font-size: 1.0em;
+        margin: 0px;
+        padding: 0px;
+        width: 0px;
+    }
+         section.package .moderator-side .ready {
+             color: #02a602;             
+         }
+         
+         section.package .moderator-side .updated {
+             color: #044604;             
+         }
+         
+         section.package .moderator-side .responded {
+             color: #a2c1a2;             
+         }
+         
+         section.package .moderator-side .waiting {
+             color: #ffb662;             
+         }
