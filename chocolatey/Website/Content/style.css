@@ -3915,10 +3915,25 @@ fieldset.form  {
 section.package {
     border-top: 1px solid #ccc;
     padding-top: 10px;
+    margin: 1em;
+    background-color: #fff;
+    padding: 0.5em 4em 0.5em 0.5em;
 }
-    
+   
 section.package.my-package {
     background: url("Images/yourpackage.png") no-repeat 100% 0; 
+    background-color: #fff;
+}
+
+section.package code {
+    font-size: 0.85em;
+    margin-top: 0.5em;
+}
+
+@media(max-width: 799px){
+    section.package code {
+        float: none;
+    }
 }
         
 section.package.unknown-status {
