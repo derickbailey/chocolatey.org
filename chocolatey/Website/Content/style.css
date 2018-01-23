@@ -3922,6 +3922,10 @@ section.package {
     padding: 0.5em;
 }
 
+.hgroup.search {
+    margin: 1em;
+}
+
 .hgroup.search form {
     font-size: 0.75em;
 }
@@ -3929,7 +3933,6 @@ section.package {
 .hgroup.search fieldset.search {
     text-align: left;
     padding-bottom: 0;
-    margin-top: 1em;
 }
 
 .hgroup.search form .form-field {
@@ -3938,19 +3941,26 @@ section.package {
 }
 
 .hgroup.search form .form-field select{
-    width: 250px;
+    width: 200px;
 }
 
 @media(max-width: 800px){
+    .hgroup.search {
+        margin-top: 1.5em;
+    }
+
+    .hgroup.search form .form-field {
+        width: 100%;
+    }
+
     .hgroup.search form .form-field select {
-        width: 450px;
+        width: 100%;
     }
 
     .hgroup.search form .form-field #sortOrder {
-        width: 380px;
+        width: 100%;
     }
 }
-
 
 @media(min-width: 1440px){
     .hgroup.search {
@@ -3993,7 +4003,31 @@ section.package.waiting {
 section.package .main {
     margin-left: 70px;
 }
-        
+
+@media(max-width: 800px){
+    section.package header .main {
+        margin-left: 50px;
+        font-size: 0.7em;
+    }
+
+    section.package header .side {
+        width: 50px;
+    }
+
+    section.package header .side img {
+        width: 35px;
+    }    
+
+    section.package header .side img.package-testing {
+        width: 15px;
+    }    
+
+    section.package .main {
+        margin-left: 0;
+        font-size: 0.9em;
+    }    
+}
+
 section.package header {
     margin-bottom: 5px;
 }
@@ -4083,8 +4117,30 @@ section.package .moderator-side .waiting {
     color: #ffb662;             
 }
 
+.hgroup.search {
+    margin: 0 1em;
+}
+
 .hgroup.search .rss-subscribe {
     float: right;
+    border: 1px solid #b1afa1;
+    background-color: #fcfbec;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    margin: 1em;
+}
+
+.hgroup.search .rss-subscribe img {
+    width: 15px;
+}
+
+.hgroup.search h1 {
+    font-size: 1.5em;
+}
+
+.hgroup.search h2 {
+    font-size: 1.25em;
+    font-weight: normal;
 }
 
 @media(max-width: 800px){

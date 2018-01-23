@@ -51,14 +51,14 @@
             }
         </div>        
     }
-    <div class="side">
-        <a href="@Url.Package(Model)" title="View more about @Model.Title">
-            <img src="@(Url.Content(packageImage ?? @Links.Content.Images.packageDefaultIcon_50x50_png))" alt="@Model.Id icon" onerror="this.src='@Links.Content.Images.packageDefaultIcon_50x50_png';" />
-            <img class="package-testing" src="@Url.Content(ballImageUrl)" title="Package testing. See package page for more details." alt="Package testing. See package page for more details." />
-        </a>
-    </div>
-    <div class="main">
-        <header> 
+    <header> 
+        <div class="side">
+            <a href="@Url.Package(Model)" title="View more about @Model.Title">
+                <img src="@(Url.Content(packageImage ?? @Links.Content.Images.packageDefaultIcon_50x50_png))" alt="@Model.Id icon" onerror="this.src='@Links.Content.Images.packageDefaultIcon_50x50_png';" />
+                <img class="package-testing" src="@Url.Content(ballImageUrl)" title="Package testing. See package page for more details." alt="Package testing. See package page for more details." />
+            </a>
+        </div>
+        <div class="main">
             <h1><a href="@Url.Package(Model.Id, Model.UseVersion ? Model.Version : null)">@Model.Title @Model.Version</a></h1>
             @*<pre>cinst @Model.Id</pre>*@
             <h2>By:</h2>
@@ -67,7 +67,9 @@
                     <li><a href="@Url.Action(MVC.Users.Profiles(owner.Username))" title="@owner.Username">@owner.Username</a></li>
                 }
             </ul>
-        </header>
+        </div>
+    </header>
+    <div class="main">
 
         <p>
             @if (isSubmitted)
@@ -92,18 +94,18 @@
                     }
                     else
                     {*@
-                if (String.IsNullOrEmpty(Model.Description) || Model.Description.Length < 350)
-                {
-                    @Model.Description
-                }
-                else
-                {
-                    @Model.Description.Substring(0, 350)<text>... </text><a href="@Url.Package(Model)">More information</a>
-
-                }
-                @*}*@
+            if (String.IsNullOrEmpty(Model.Description) || Model.Description.Length < 350)
+            {
+                @Model.Description
             }
-           
+            else
+            {
+                @Model.Description.Substring(0, 350)<text>... </text><a href="@Url.Package(Model)">More information</a>
+
+            }
+            @*}*@
+            }
+
         </p>
         <div class="nuget-badge-small">
             <code>
@@ -118,7 +120,7 @@
             <p class="downloads">
                 @Model.TotalDownloadCount.ToString("n0") downloads
             </p>
-            
+
             @if (@Model.Tags.AnySafe())
             {
                 <div class="tags">
@@ -133,4 +135,5 @@
             }
         </footer>
     </div>
+
 </section>
