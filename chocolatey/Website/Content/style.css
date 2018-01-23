@@ -3917,7 +3917,14 @@ section.package {
     padding-top: 10px;
     margin: 1em;
     background-color: #fff;
-    padding: 0.5em 4em 0.5em 0.5em;
+    padding: 0.5em;
+}
+
+@media(min-width: 1440px){
+    #searchResults li {
+        width: 1400px;
+        margin: 0 auto;
+    }
 }
    
 section.package.my-package {
@@ -3925,17 +3932,6 @@ section.package.my-package {
     background-color: #fff;
 }
 
-section.package code {
-    font-size: 0.85em;
-    margin-top: 0.5em;
-}
-
-@media(max-width: 799px){
-    section.package code {
-        float: none;
-    }
-}
-        
 section.package.unknown-status {
     background-color: #fff0f0;
 }       
@@ -3966,6 +3962,7 @@ section.package header {
 
 section.package footer {
   display: block;
+  font-size: 0.75em;
 }
 
 section.package h1 {
@@ -4062,20 +4059,32 @@ section.package .moderator-side .waiting {
     }
 }
 
+section.package img.package-testing {
+    width: 1em;
+}
+
 /* NuGet Badge */
 .nuget-badge-small code {
-  background-color: #202020;
-  border: 4px solid #c0c0c0;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  box-shadow: 2px 2px 3px #6e6e6e;
-  color: #e2e2e2;
-  display: inline-block;
-  font: 1.25em consolas, 'andale mono', 'lucida console', monospace; 
-  line-height: 0.90em;
-  overflow: auto;
-  padding: 15px;
-  float:right;
-  width: 450px;
+    float: none;
+    margin-top: 0.5em;
+    width: 500px;
+    max-width: 100%;
+    background-color: #202020;
+    border: 4px solid #c0c0c0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 2px 2px 3px #6e6e6e;
+    color: #e2e2e2;
+    display: inline-block;
+    font: 0.85em consolas, 'andale mono', 'lucida console', monospace;
+    line-height: 0.90em;
+    overflow: auto;
+    padding: 15px;
+}
+
+@media(max-width: 800px){
+    .nuget-badge-small code {
+        width: 100%;
+    }
 }

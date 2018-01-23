@@ -54,18 +54,12 @@
     <div class="side">
         <a href="@Url.Package(Model)" title="View more about @Model.Title">
             <img src="@(Url.Content(packageImage ?? @Links.Content.Images.packageDefaultIcon_50x50_png))" alt="@Model.Id icon" onerror="this.src='@Links.Content.Images.packageDefaultIcon_50x50_png';" />
+            <img class="package-testing" src="@Url.Content(ballImageUrl)" title="Package testing. See package page for more details." alt="Package testing. See package page for more details." />
         </a>
     </div>
     <div class="main">
         <header> 
-            <div class="nuget-badge-small">
-                <code><span>C:\&gt; </span>choco install @Model.Id.ToLower()
-                    @if ((!Model.LatestVersion && !Model.LatestStableVersion) || !Model.Listed)
-                    { <text> --version @Model.Version</text> }
-                    @if (Model.Prerelease)
-                    {<text> --pre </text>}</code>
-            </div>
-            <h1><img class="package-testing" src="@Url.Content(ballImageUrl)" title="Package testing. See package page for more details." alt="Package testing. See package page for more details." /> <a href="@Url.Package(Model.Id, Model.UseVersion ? Model.Version : null)">@Model.Title @Model.Version</a></h1>
+            <h1><a href="@Url.Package(Model.Id, Model.UseVersion ? Model.Version : null)">@Model.Title @Model.Version</a></h1>
             @*<pre>cinst @Model.Id</pre>*@
             <h2>By:</h2>
             <ul class="owners">
@@ -111,7 +105,15 @@
             }
            
         </p>
-
+        <div class="nuget-badge-small">
+            <code>
+                <span>C:\&gt; </span>choco install @Model.Id.ToLower()
+                @if ((!Model.LatestVersion && !Model.LatestStableVersion) || !Model.Listed)
+                { <text> --version @Model.Version</text> }
+                @if (Model.Prerelease)
+                {<text> --pre </text>}
+            </code>
+        </div>
         <footer>
             <p class="downloads">
                 @Model.TotalDownloadCount.ToString("n0") downloads
