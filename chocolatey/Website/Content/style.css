@@ -3912,6 +3912,8 @@ fieldset.form  {
     }
 
 /* List Package on search results */
+
+
 section.package {
     border-top: 1px solid #ccc;
     padding-top: 10px;
@@ -3920,7 +3922,32 @@ section.package {
     padding: 0.5em;
 }
 
+.hgroup.search form {
+    font-size: 0.75em;
+}
+
+.hgroup.search fieldset.search {
+    text-align: left;
+    padding-bottom: 0;
+    margin-top: 1em;
+}
+
+.hgroup.search form .form-field {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.hgroup.search form .form-field select{
+    width: 250px;
+}
+
 @media(min-width: 1440px){
+    .hgroup.search {
+        width: 1400px;
+        margin: 0 auto;
+        padding: 0 1em;
+    }
+
     #searchResults li {
         width: 1400px;
         margin: 0 auto;
