@@ -4117,10 +4117,6 @@ section.package .moderator-side .waiting {
     color: #ffb662;             
 }
 
-.hgroup.search {
-    margin: 0 1em;
-}
-
 .hgroup.search .rss-subscribe {
     float: right;
     border: 1px solid #b1afa1;
@@ -4146,6 +4142,7 @@ section.package .moderator-side .waiting {
 @media(max-width: 800px){
     .hgroup.search {
         text-align: center;
+        margin: 0 1em;
     }
 
     .hgroup.search .rss-subscribe {
