@@ -3941,6 +3941,17 @@ section.package {
     width: 250px;
 }
 
+@media(max-width: 800px){
+    .hgroup.search form .form-field select {
+        width: 450px;
+    }
+
+    .hgroup.search form .form-field #sortOrder {
+        width: 380px;
+    }
+}
+
+
 @media(min-width: 1440px){
     .hgroup.search {
         width: 1400px;
