@@ -4088,15 +4088,11 @@ section.package .side img {
 }
             
 section.package .moderator-side {
-    position: relative;
-    float: right;
-    left: -1050px;
-    text-align: right;
     font-weight: bold;
-    font-size: 1.0em;
-    margin: 0px;
-    padding: 0px;
-    width: 0px;
+    margin-left: 70px;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #dadada;
+    margin-right: 70px;
 }
 
 section.package .moderator-side .ready {
@@ -4108,11 +4104,11 @@ section.package .moderator-side .updated {
 }
          
 section.package .moderator-side .responded {
-    color: #a2c1a2;             
+    color: #044604;             
 }
          
 section.package .moderator-side .waiting {
-    color: #ffb662;             
+    color: #bf7622;             
 }
 
 .hgroup.search .rss-subscribe {
