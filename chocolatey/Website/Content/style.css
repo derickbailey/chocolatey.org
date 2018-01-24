@@ -3924,6 +3924,30 @@ section.package {
     margin: 1em;
 }
 
+.hgroup.search .community-disclaimer {
+    margin-top: 0;
+    font-size: 0.9em;
+    border-radius: 0.25em;
+    border: 1px solid #ccc;
+    padding: 0.5em 1em;
+    text-align: justify;
+    background-color: #fcfbec;
+    line-height: 1.25em;
+    margin-top: -2em;
+}
+
+@media(max-width: 1900px){
+    .hgroup.search .community-disclaimer {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 800px){
+    .hgroup.search .community-disclaimer {
+        margin-top: 1em;
+    }
+}
+
 .hgroup.search form {
     font-size: 0.75em;
 }
@@ -4117,7 +4141,7 @@ section.package .moderator-side .waiting {
     background-color: #fcfbec;
     border-radius: 0.25em;
     padding: 0.5em;
-    margin: 1em;
+    margin: 0 0 1em 0;
 }
 
 .hgroup.search .rss-subscribe img {
@@ -4195,4 +4219,85 @@ ul.pager li.previous {
         
 ul.pager li.next {
     padding-left: 10px;
+}
+
+
+/* packages notice */
+.modal-closeable {
+    position: fixed;
+    display: none;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em 1em 0em 1em;
+    margin: 0em;
+    background-color: rgba(0,0,0,0.5);
+    overflow: scroll;
+}
+
+.modal-closeable .message-content {
+    display: block;
+    position: relative;
+    width: 960px;
+    margin: 2em auto;
+    padding: 1em 1em 2em 1em;
+    font-size: 1.25em;
+    border: 10px solid #ccc;
+    border-radius: 0.5em;
+    background-color: #fff;
+}
+
+@media(max-width: 1024px){
+    .modal-closeable .message-content {
+        width: 100%;
+    }    
+}
+
+.modal-closeable .close {
+    position: relative;
+    display: inline-block;
+    float: right;
+    clear: both;
+    margin-top: -2em;
+    text-decoration: underline;
+    font-size: 0.8em;
+    color: #fff;
+    border: 3px solid #070;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    border-radius: 0.5em;
+    background-color: #0a0;
+    cursor: pointer;
+}
+
+.modal-closeable .close:hover {
+    background-color: #0c0;
+}
+
+.modal-closeable .close:active {
+    background-color: #070;
+}
+
+#package-disclaimer .message-content {
+    font-size: 1em;
+}
+
+#package-disclaimer .message-content p:first-child {
+    margin-top: 0;
+}
+
+#package-disclaimer .message-content h4+p {
+    margin-top: 0.25em;
+}
+
+#package-disclaimer .message-content h4 {
+    margin-top: 0.5em;
+}
+
+#package-disclaimer .message-content ul {
+    list-style: unset;
+    margin-left: 2.5em;
+    margin-bottom: 0.5em;
 }

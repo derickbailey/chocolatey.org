@@ -1,4 +1,4 @@
-﻿@model PackageListViewModel
+@model PackageListViewModel
 @{
     Layout = "~/Views/Shared/Layout.cshtml";
     ViewBag.Title = string.IsNullOrWhiteSpace(Model.SearchTerm) ? "Packages" : "Packages matching " + Model.SearchTerm;
@@ -24,29 +24,15 @@
 *@
 
 
-  @if (!User.Identity.IsAuthenticated)
-  {
-      <div class="p">
-        <div class="block full-width m-t p-b clearfix p">
-          @* <div class="m-b h3">
-            <div class="package-search m-r border-radius">
-                <form class="p full-width" action="@Url.PackageList()" method="get">
-                    <input name="q" id="search" type="search" class="p full-width" title="Search by id only with 'id:searchValue'. Search by tags with 'tag:searchValue'." placeholder="Search community packages..." value="@(String.IsNullOrEmpty(ViewBag.SearchTerm) ? "" : ViewBag.SearchTerm)" />
-                    <input id="searchBoxSubmit" title="Search by id only with 'id:searchValue'. Search by tags with 'tag:searchValue'." type="submit" value=" " />
-                </form>
-            </div>
-        </div>*@
-        <div>
-          <p class="no-margin">
             Your use of the packages on this site means you understand they are not supported or guaranteed in any way. Due to the nature of a public repository and unreliability due to distribution rights, these packages should not be used as is for organizational purposes either. <a href="@Url.RouteUrl(RouteName.Docs, new {docName="community-packages-disclaimer"})">Learn more</a>.
-          </p>
-        </div>
-          @Html.Partial("~/Views/Packages/_CommunityInfoDisclaimer.cshtml")
-        </div>
-      </div>
-  }
-
 <div class="hgroup search">
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <p class="community-disclaimer">
+        </p>
+        @Html.Partial("~/Views/Packages/_CommunityInfoDisclaimer.cshtml")
+    }
+
     <div class="rss-subscribe">
         <a href="https://feeds.feedburner.com/chocolatey" title="Subscribe to package updates" rel="alternate" type="application/rss+xml"><img src="https://www.feedburner.com/fb/images/pub/feed-icon32x32.png" alt="RSS" style="border:0" />&nbsp;<span>Subscribe to updates</span></a>
         <br />
