@@ -4179,3 +4179,26 @@ section.package img.package-testing {
         width: 100%;
     }
 }
+
+            
+/* Pager */
+ul.pager {
+    list-style: none;
+    font-size: 1em;
+    margin: 1em;
+    padding:0;
+    text-align: center;
+}
+    
+ul.pager li {
+    display: inline;
+}
+        
+ul.pager li.previous {
+    border-right: solid 1px #ccc;
+    padding-right: 7px;
+}
+        
+ul.pager li.next {
+    padding-left: 10px;
+}
