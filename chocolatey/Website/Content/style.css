@@ -3878,9 +3878,7 @@ fieldset.form  {
     }
     
     div.search h2 {
-        font-size: 1.5em;
-        margin-left: 5px;
-        
+        font-size: 1.5em;        
     }
     
     fieldset.search {
@@ -4135,7 +4133,7 @@ section.package .moderator-side .waiting {
 }
 
 .hgroup.search h2 {
-    font-size: 1.25em;
+    font-size: 1em;
     font-weight: normal;
 }
 
