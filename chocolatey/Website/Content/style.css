@@ -3804,7 +3804,7 @@ fieldset.form  {
 
 .search-results ul.results-tab-list {
     list-style: none;
-    margin: 0 0 1em 0;
+    margin: 0 auto 1em auto;
     padding: 0;
     border-bottom: 2px solid #ccc;
 }
@@ -3969,7 +3969,7 @@ section.package {
         padding: 0 1em;
     }
 
-    #searchResults li {
+    #searchResults li, .results-tab-list, .search-results .docs-results {
         width: 1400px;
         margin: 0 auto;
     }
