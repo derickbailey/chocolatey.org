@@ -4308,3 +4308,80 @@ ul.pager li.next {
     margin-left: 2.5em;
     margin-bottom: 0.5em;
 }
+
+/* two column layout */
+#sideColumn {
+    float: left;
+    width: 20%;
+}
+
+#mainColumn {
+    float: right;
+    margin-bottom: 20px;
+    width: 77%;
+}
+
+@media(min-width: 1440px) {
+    main {
+        width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* package display page */
+
+.package-file-content {
+    display: none;
+}
+
+.package-page {
+    margin-right: 2em;
+}
+
+.package-page .page-heading {
+    margin-bottom: 2em;
+    border-bottom: 1px solid #bb9;
+    padding-bottom: 0.5em;
+}
+
+.package-page .page-heading h1 {
+    font-size: 2em;
+}
+
+.package-page .page-heading h2 {
+    font-size: 1.25em;
+    font-weight: normal;
+    display: inline;
+}
+
+.package-page .page-heading h2 img {
+    height: 15px;
+    width: 15px;
+    display: inline;
+}
+
+#sideColumn #stats {
+    margin-left: 2em;
+}
+
+#sideColumn .stat {
+    margin-bottom: 2em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    padding: 0.5em 0;
+}
+
+#sideColumn .stat .stat-number {
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+}
+
+#sideColumn .stat .stat-label {
+    margin: 0;
+    display: block;
+    text-align: center;
+}
