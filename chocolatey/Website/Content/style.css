@@ -4385,3 +4385,7 @@ ul.pager li.next {
     display: block;
     text-align: center;
 }
+
+#sideColumn .links {
+    margin-left: 2em;
+}
