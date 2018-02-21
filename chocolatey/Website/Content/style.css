@@ -4389,3 +4389,11 @@ ul.pager li.next {
 #sideColumn .links {
     margin-left: 2em;
 }
+
+#sideColumn ul.links li a {
+    font-weight: normal;
+}
+
+#sideColumn ul.links li {
+    font-weight: bold;
+}
