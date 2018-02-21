@@ -592,15 +592,15 @@
     }
 
 
-    <a name="files" id="files"></a><h3 title="Nuspec reference: files, optional - will default to all files next to nuspec">Files</h3>
-    <a onclick="if ($(this).text() == 'Hide') {$('#div-filessection').hide();$(this).text('Show');} else {$('#div-filessection').show();$(this).text('Hide');}">Hide</a>
+    <a name="files" id="files"></a><h3 class="filesListingHeader" title="Nuspec reference: files, optional - will default to all files next to nuspec">Files</h3>
+    <a id="showHideFilesListing">Hide</a>
     <div id="div-filessection">
     @if (expandForModeration)
     {
         var nuspecId = @Model.Id.Replace(".","-") + "-nuspec";
         <ul>
           <li>@Model.Id<span>.nuspec</span> 
-            <a onclick="if ($(this).text() == 'Hide') {$('#@nuspecId').hide();$(this).text('Show');} else {$('#@nuspecId').show();$(this).text('Hide');}">Hide</a>
+            <a class="fileContentShowHide" onclick="if ($(this).text() == 'Hide') {$('#@nuspecId').hide();$(this).text('Show');} else {$('#@nuspecId').show();$(this).text('Hide');}">Hide</a>
             <br />
             <div id="@nuspecId" class="package-file-content">    
               <pre class="brush: xml">
@@ -715,11 +715,11 @@
                     var fileDivId = "div-" + Path.GetFileName(file.FilePath).Replace(".", "-").Replace(" ", string.Empty) + "-" + random.Next();
                     if (expandForModeration)
                     {
-                        <a onclick="if ($(this).text() == 'Hide') {$('#@fileDivId').hide();$(this).text('Show');} else {$('#@fileDivId').show();$(this).text('Hide');}">Hide</a>
+                        <a class="fileContentShowHide" onclick="if ($(this).text() == 'Hide') {$('#@fileDivId').hide();$(this).text('Show');} else {$('#@fileDivId').show();$(this).text('Hide');}">Hide</a>
                     }
                     else
                     {
-                        <a onclick="if ($(this).text() == 'Hide') {$('#@fileDivId').hide();$(this).text('Show');} else {$('#@fileDivId').show();$(this).text('Hide');}">Show</a>
+                        <a class="fileContentShowHide" onclick="if ($(this).text() == 'Hide') {$('#@fileDivId').hide();$(this).text('Show');} else {$('#@fileDivId').show();$(this).text('Hide');}">Show</a>
                     }
                     <br />
                     <div id="@fileDivId" class="package-file-content">
@@ -978,6 +978,26 @@
       SyntaxHighlighter.defaults['auto-links'] = true;
       SyntaxHighlighter.defaults['collapse'] = false;
       SyntaxHighlighter.all();
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            var showFiles = true;
+            var $showHide = $("#showHideFilesListing");
+            var $filesSection = $('#div-filessection');
+
+            $showHide.click(function (e) {
+                if (showFiles) {
+                    showFiles = false;
+                    $filesSection.hide();
+                    $showHide.text('Show');
+                } else {
+                    showFiles = true;
+                    $filesSection.show();
+                    $showHide.text('Hide');
+                }
+            });
+        })();
     </script>
 
     <noscript>

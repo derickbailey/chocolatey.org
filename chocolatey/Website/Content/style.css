@@ -4395,6 +4395,21 @@ ul.pager li.next {
     padding: 10px;
 }
 
+.package-page h3.filesListingHeader {
+    display: inline-block;
+}
+
+.package-page a#showHideFilesListing {
+    display: inline-block;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.package-page #div-filessection .fileContentShowHide {
+    font-weight: normal;
+    font-size: 0.9em
+}
+
 #sideColumn #stats {
     margin-left: 2em;
 }
