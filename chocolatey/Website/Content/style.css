@@ -4410,6 +4410,33 @@ ul.pager li.next {
     font-size: 0.9em
 }
 
+.package-page ul#dependencySets, .package-page ul.dependencySet {
+    list-style: none;
+    margin-left: 0.5em;
+}
+
+.package-page ul.dependencySet a {
+    font-weight: normal;
+}
+
+.package-page ul.owners {
+    list-style: none;
+    margin-left: 1em;
+}
+
+.package-page ul.owners a {
+    font-weight: normal;
+}
+
+.package-page ul.authors {
+    list-style: none;
+    margin-left: 1em;
+}
+
+.package-page ul.tags a {
+    font-weight: normal;
+}
+
 #sideColumn #stats {
     margin-left: 2em;
 }
@@ -4446,4 +4473,62 @@ ul.pager li.next {
 
 #sideColumn ul.links li {
     font-weight: bold;
+}
+
+/* Sexy Table */
+.sexy-table {
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.sexy-table thead tr {
+    border-bottom: solid 1px #333;
+}
+        
+.sexy-table th {
+    font-size: 1.25em;
+    font-weight: normal;
+    padding: 5px 15px 0px 0px;
+    text-align:left;
+}
+        
+.sexy-table th.actions {
+    text-indent: -9999px;
+}
+
+.sexy-table td.actions {
+    width: 30px;
+}
+
+.sexy-table tbody tr {
+    margin-bottom: 10px;
+}
+        
+.sexy-table tbody tr:hover {
+    background-color: #f4f5f6;
+}
+        
+.sexy-table tbody tr.recommended {
+    font-weight: 800;
+}
+
+.sexy-table tbody td {
+    padding: 5px 25px 5px 0;
+}
+            
+.sexy-table tbody td.actions {
+    padding: 2px 5px;
+}
+           
+.sexy-table tfoot {
+    border-bottom: solid 1px #333;
+    font-weight: 600;
+}
+        
+.sexy-table tfoot td {
+    padding: 3px 0;
+}
+             
+.sexy-table tfoot tr {
+    border-top: 2px solid #333;
 }

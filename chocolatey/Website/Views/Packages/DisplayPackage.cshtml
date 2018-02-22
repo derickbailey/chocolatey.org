@@ -243,7 +243,6 @@
     @if (Model.IsDownloadCacheAvailable)
     {
         <div class="message approved">Private CDN cached downloads available for licensed customers. Never experience 404 breakages again! <a href="@Url.RouteUrl(RouteName.Docs, new { docName = "features-private-cdn" })">Learn more...</a></div>
-        <br />
     }
 
   @if (Model.IsInstallOrPortable)
@@ -259,7 +258,6 @@
             installed versus portable apps</a> and/or learn about <a href="@Url.RouteUrl(RouteName.FAQ)#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and--ie-autohotkey">
             this kind of package</a>. 
         </div> 
-        <br />
     }
 
     @if (Model.Status == PackageStatusType.Submitted && !anyPackageRole)
@@ -273,26 +271,24 @@
             <li>There are also no guarantees that it will be approved.</li>
           </ul>
         </div>
-        <br />
     }
     @if (Model.PackageVersions.Any(pv => pv.Status == PackageStatusType.Submitted))
     {
-        <div class="message warning">There are versions of this package awaiting moderation @(Model.Status == PackageStatusType.Submitted ? "(possibly just this one)" : string.Empty). See the <a href="#versionhistory">Version History section</a> below.</div> <br />
+        <div class="message warning">There are versions of this package awaiting moderation @(Model.Status == PackageStatusType.Submitted ? "(possibly just this one)" : string.Empty). See the <a href="#versionhistory">Version History section</a> below.</div>
     }  
     
     @if (Model.PackageTestResultsStatus == PackageAutomatedReviewResultStatusType.Exempted)
     {
          <div class="message warning"><p>This package skips automatic verification:</p>
                 @Html.Raw(markdownGenerator.Transform(Model.ExemptedFromVerificationReason.clean_html()))
-         </div><br />
+         </div>
     }
 
     @if (Model.Status == PackageStatusType.Rejected)
     {
         <div class="message error">This package was rejected on @Model.ReviewedDate.GetValueOrDefault().ToShortDateString(). The reviewer @Model.ReviewerUserName has listed the following reason(s):
-            <br />
             @Html.Raw(markdownGenerator.Transform(Model.ReviewComments.clean_html()))
-        </div> <br />
+        </div>
     }
     else if (maintainer && !Model.Listed && Model.Status != PackageStatusType.Approved && Model.Status != PackageStatusType.Exempted)
     {
@@ -324,7 +320,7 @@
         {
             <div class="message"><p>Review Comments:</p>
                 @Html.Raw(markdownGenerator.Transform(Model.ReviewComments.clean_html()))
-            </div><br />
+            </div>
         }
     }
     else if (anyPackageRole && Model.Status != PackageStatusType.Rejected)
@@ -333,7 +329,7 @@
         {
             <div class="message"><p>Review Comments:</p>
                 @Html.Raw(markdownGenerator.Transform(Model.ReviewComments.clean_html()))
-            </div><br />
+            </div>
         }
     }
 
@@ -480,7 +476,6 @@
 
                     @if (moderationRole)
                     {
-                    <br /><br />
                     <a onclick="if ($(this).text() == 'Hide') {$('#div-trustedpackage').hide();$(this).text('Show Trusted Section');} else {$('#div-trustedpackage').show();$(this).text('Hide');}">Show Trusted Section</a>
 
                         <div class="form-field" id="div-trustedpackage">
@@ -495,7 +490,6 @@
                                     <li>Use "Save" above to make this change. You may want to uncheck Send Email.</li>
                                 }
                             </ul>
-                            <br />
                             @if (moderator)
                             {
                                 @Html.EditorFor(m => m.IsTrusted)
@@ -530,7 +524,6 @@
                                     <li>Use "Save" above to make this change. You may want to uncheck Send Email.</li>
                                 }
                             </ul>
-                            <br />
                             @if (moderator)
                             {
                                 @Html.EditorFor(m => m.IsExemptedFromVerification)
@@ -601,7 +594,6 @@
         <ul>
           <li>@Model.Id<span>.nuspec</span> 
             <a class="fileContentShowHide" onclick="if ($(this).text() == 'Hide') {$('#@nuspecId').hide();$(this).text('Show');} else {$('#@nuspecId').show();$(this).text('Hide');}">Hide</a>
-            <br />
             <div id="@nuspecId" class="package-file-content">    
               <pre class="brush: xml">
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
@@ -721,7 +713,7 @@
                     {
                         <a class="fileContentShowHide" onclick="if ($(this).text() == 'Hide') {$('#@fileDivId').hide();$(this).text('Show');} else {$('#@fileDivId').show();$(this).text('Hide');}">Show</a>
                     }
-                    <br />
+
                     <div id="@fileDivId" class="package-file-content">
                       @{ var langBrush = "";
                       }
@@ -796,8 +788,7 @@
           </li>
           }
         </ul>
-        <p class="message warning" style="font-size: 1em;">In cases where actual malware is found, the packages are subject to removal. Software sometimes has false positives. Moderators do not necessarily validate the safety of the underlying software, only that a package retrieves software from the official distribution point and/or validate embedded software against official distribution point (where distribution rights allow redistribution).<br />
-          <br />
+        <p class="message warning" style="font-size: 1em;">In cases where actual malware is found, the packages are subject to removal. Software sometimes has false positives. Moderators do not necessarily validate the safety of the underlying software, only that a package retrieves software from the official distribution point and/or validate embedded software against official distribution point (where distribution rights allow redistribution).
           Chocolatey Pro provides <a href="@Url.RouteUrl(RouteName.Docs, new { docName = "features-virus-check" })">runtime protection</a> from possible malware.
         </p>
     }
@@ -900,7 +891,6 @@
 <div class="package-page">
     <a name="discussion" id="discussion"></a><h3>Discussion for the @Model.Title Package</h3>
     <p>Ground rules:
-        <br />
         <ul>
             <li>This discussion is only about @Model.Title and the @Model.Title package. If you
                 have feedback for Chocolatey, please contact the <a href="http://groups.google.com/group/chocolatey">
