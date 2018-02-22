@@ -4437,6 +4437,23 @@ ul.pager li.next {
     font-weight: normal;
 }
 
+.package-page ul.tags li:last-child:after {
+    content: "";
+}
+
+.package-page ul.tags li:after {
+    content: ",";
+}
+
+.package-page ul.tags li {
+    display: inline;
+    margin-right: 0.5em;
+}
+
+.package-page ul.tags {
+    list-style: none;
+}
+
 #sideColumn #stats {
     margin-left: 2em;
 }
