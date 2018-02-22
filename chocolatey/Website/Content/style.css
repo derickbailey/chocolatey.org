@@ -4492,6 +4492,42 @@ ul.pager li.next {
     font-weight: bold;
 }
 
+@media(max-width: 800px)  {
+    #sideColumn {   
+        float: none;
+        display: block;
+        width: 100%
+    }
+
+    #sideColumn .stat {
+        display: inline-block;
+        width: 31.5%;
+        text-align: justify;
+    }
+
+    #sideColumn ul.links {
+        margin-right: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    #sideColumn ul.links li {
+        display: inline;
+        margin-right: 0.5em;
+    }
+
+    #sideColumn ul.links li.label {
+        display: block;
+        margin-top: 1.5em;
+    }
+
+    #mainColumn {
+        width: 100%;
+        margin: 0;
+        padding: 1em 0 0 2em;
+        float: none;
+    }
+}
+
 /* Sexy Table */
 .sexy-table {
     border-collapse: collapse;
